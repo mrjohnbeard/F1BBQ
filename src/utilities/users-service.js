@@ -1,11 +1,12 @@
 import * as usersAPI from './users-api';
 
 export async function signUp(userData) {
-  // Delegate the network request code to the users-api.js
-  // module which will ultimately return a JWT
-  const token = await usersAPI.signUp(userData);
-  localStorage.setItem('token', token);
-  return getUser();
+  try {
+    const token = await usersAPI.signUp(userData);
+    localStorage.setItem('token', token);
+    return getUser();
+  } catch {
+  }
 }
 
 export async function login(credentials) {
@@ -38,7 +39,6 @@ export function logOut() {
 
 /*-- This is not necessary in your MERN-Stack projects ---*/
 /*-- It's only to see how to send a token to the server ---*/
-export function checkToken() {
-  return usersAPI.checkToken()
-  .then(dateStr => new Date(dateStr));
+export async function checkToken(){
+  return new Date(await usersAPI.checkToken());
 }

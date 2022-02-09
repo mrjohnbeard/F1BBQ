@@ -1,17 +1,17 @@
-import React from 'react';
-import { checkToken } from '../../utilities/users-service';
+import './OrderHistoryPage.css';
+import { checkToken } from './../../utilities/users-service';
 
-export default function OrderHistoryPage() {
-
-  async function handleCheckToken() {
+const OrderHistoryPage = () => {
+  const handleCheckToken = async () => {
     const expDate = await checkToken();
     console.log(expDate);
   }
-
   return (
     <>
       <h1>OrderHistoryPage</h1>
       <button onClick={handleCheckToken}>Check When My Login Expires</button>
     </>
-  );
-}
+  )
+};
+
+export default OrderHistoryPage;

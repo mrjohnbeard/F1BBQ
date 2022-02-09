@@ -16,7 +16,7 @@ export function checkToken() {
 
 /*--- Helper Functions ---*/
 
-async function sendRequest(url, method = 'GET', payload = null) {
+async function sendRequest(url, method = 'GET', payload) {
   // Fetch accepts an options object as the 2nd argument
   // used to include a data payload, set headers, etc. 
   const options = { method };

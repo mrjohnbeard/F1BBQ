@@ -1,7 +1,11 @@
-import React from 'react';
+import './NewOrderPage.css';
 
-export default function NewOrderPage() {
+const NewOrderPage = () => {
   return (
-    <h1>NewOrderPage</h1>
-  );
-}
+    <>
+      <h1>NewOrderPage</h1>
+    </>
+  )
+};
+
+export default NewOrderPage;
